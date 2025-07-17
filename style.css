@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ==========================================================================
    STYLE UNTUK PORTOFOLIO MAHASISWA - DARK MODE EDITION (VERSI FINAL)
    Dibuat oleh: Gemini
@@ -757,3 +758,574 @@ footer {
     font-size: 2.2rem;
   }
 }
+=======
+/* ==========================================================================
+   STYLE UNTUK PORTOFOLIO MAHASISWA - DARK MODE EDITION (VERSI FINAL)
+   Dibuat oleh: Gemini
+   Desain ini menggunakan:
+   - Font Judul: Poppins (Tegas & Modern)
+   - Font Isi: Inter (Sangat mudah dibaca)
+   - Palet Warna: Dark Mode dengan aksen Ungu (Enerjik & Kreatif)
+   ========================================================================== */
+
+/* Impor Font dari Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap");
+
+/* Variabel Global (Control Panel Desain Anda) */
+:root {
+  --bg-color: #121212; /* Latar belakang utama (sangat gelap) */
+  --card-color: #1e1e1e; /* Latar belakang untuk kartu/section (sedikit lebih terang) */
+  --primary-color: #9b59b6; /* Warna aksen utama (Ungu) */
+  --primary-color-hover: #8e44ad; /* Warna aksen saat di-hover */
+  --text-color: #e0e0e0; /* Warna teks utama (putih keabuan) */
+  --subtle-text-color: #a0a0a0; /* Warna teks sekunder (abu-abu) */
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Reset & Gaya Dasar Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Efek scroll halus saat klik navigasi */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Gaya Umum untuk Kontainer & Judul */
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
+  border-bottom: 1px solid #333; /* Garis pemisah antar section */
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+}
+
+/* Header & Navigasi */
+header {
+  width: 100%;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background-color: rgba(
+    18,
+    18,
+    18,
+    0.8
+  ); /* Latar belakang transparan saat scroll */
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid #333;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+nav .logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Bagian Hero */
+#hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ffffff, #b39ddb, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--subtle-text-color);
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  flex-basis: 300px;
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 7px solid var(--primary-color);
+  box-shadow: 0 0 30px rgba(155, 89, 182, 0.5);
+}
+
+/* Tombol Call to Action (CTA) */
+.cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-color-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+}
+
+/* ==================================================================
+   GAYA UNTUK HALAMAN UTAMA - GALERI PROYEK (index.html)
+   ================================================================== */
+
+.project-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card-new {
+  display: block;
+  text-decoration: none;
+  background-color: var(--card-color);
+  border-radius: 12px;
+  border: 1px solid #333;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card-new:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-new .card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card-new:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.project-card-new .card-content {
+  padding: 20px 25px;
+}
+
+.project-card-new h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.project-card-new p {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* ==================================================================
+   GAYA UNTUK HALAMAN DETAIL PROYEK (proyek-akuntansi.html)
+   ================================================================== */
+
+/* Header Halaman Detail */
+.project-detail-page {
+  padding-top: 40px;
+}
+
+.project-detail-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.project-detail-header h1 {
+  font-size: 3rem;
+  color: white;
+}
+
+.back-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: var(--primary-color);
+}
+
+/* Galeri Visual di Halaman Detail */
+.case-study-visual {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-visual-viewer {
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-visual-viewer img,
+.main-visual-viewer video {
+  width: 100%;
+  display: block;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #555;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  border-color: var(--primary-color-hover);
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Konten Deskripsi di Halaman Detail */
+.project-detail-content {
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+  display: grid;
+  gap: 30px;
+}
+
+.content-block {
+  background-color: var(--card-color);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.content-block h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Daftar Fitur */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  color: var(--text-color);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.feature-list li::before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Tag Teknologi */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-stack span {
+  background-color: #333;
+  color: var(--subtle-text-color);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* Tombol Link Proyek */
+.project-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+/* ==================================================================
+   GAYA UNTUK SECTION LAINNYA (JOURNEY, SKILLS, DLL)
+   ================================================================== */
+
+/* Bagian Journey (Timeline) */
+#journey {
+  position: relative;
+}
+
+#journey::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: #333;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 40px;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  padding-right: 60px;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  padding-left: 60px;
+  text-align: left;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  border: 3px solid var(--primary-color);
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::after {
+  right: -8px;
+}
+
+.timeline-item:nth-child(even)::after {
+  left: -8px;
+}
+
+.timeline-item h4 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.timeline-item p {
+  color: var(--subtle-text-color);
+}
+
+/* Bagian Skills & Experience */
+#skills p,
+.exp-item {
+  background-color: var(--card-color);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.exp-item h4 {
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--subtle-text-color);
+}
+
+/* =================================
+   GAYA UNTUK IKON KONTAK
+   ================================= */
+
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Agar rapi di layar kecil */
+  gap: 30px; /* Jarak antar ikon */
+  margin-top: 40px;
+}
+
+.social-icon {
+  font-size: 2.5rem; /* Ukuran ikon */
+  color: var(--subtle-text-color); /* Warna default ikon */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Efek Hover - Ini bagian menariknya! */
+.social-icon:hover {
+  transform: scale(1.2) translateY(-5px); /* Ikon membesar dan sedikit terangkat */
+}
+
+/* Warna spesifik brand saat di-hover */
+.social-icon.email:hover {
+  color: var(--primary-color);
+}
+.social-icon.linkedin:hover {
+  color: #0a66c2;
+}
+.social-icon.github:hover {
+  color: #ffffff;
+}
+.social-icon.whatsapp:hover {
+  color: #25d366;
+}
+.social-icon.instagram:hover {
+  color: #e4405f;
+}
+.social-icon.discord:hover {
+  color: #5865f2;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Untuk Tampilan Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  /* Navigasi mobile */
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Hero Section Mobile */
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-image {
+    margin-bottom: 40px;
+    width: 250px;
+  }
+
+  /* Timeline Mobile */
+  #journey::before {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding: 20px 0 20px 50px;
+    text-align: left !important;
+  }
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  .timeline-item::after {
+    left: 12px !important;
+  }
+
+  /* Detail Proyek Mobile */
+  .project-detail-header h1 {
+    font-size: 2.2rem;
+  }
+}
+>>>>>>> 9682144edc414c5ff3f7206cfa64a8550b0a6b2f
