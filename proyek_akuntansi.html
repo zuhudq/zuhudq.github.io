@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studi Kasus: Sistem Akuntansi Web - Zuhud Qolbu Adi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">ZUHUD QOLBU</a>
+        <a href="index.html#proyek" class="back-link"
+          >← Kembali ke Semua Proyek</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-detail-page">
+        <div class="project-detail-header">
+          <h1>Sistem Informasi Akuntansi Berbasis Web</h1>
+          <p class="project-summary">
+            Aplikasi web komprehensif yang dibangun dari nol menggunakan PHP dan
+            framework CodeIgniter 4 untuk mengelola siklus akuntansi penuh
+            secara mandiri.
+          </p>
+        </div>
+
+        <div class="case-study-visual">
+          <div class="main-visual-viewer">
+            <video controls poster="assets/akuntansi_dashboard.png">
+              <source src="assets/demo_akuntansi.mp4" type="video/mp4" />
+              Browser Anda tidak mendukung tag video.
+            </video>
+          </div>
+          <div class="thumbnail-gallery">
+            <img
+              src="assets/tumbnail.png"
+              alt="Thumbnail Video Demo"
+              class="thumbnail active"
+              data-type="video"
+              data-video-src="assets/demo_akuntansi.mp4"
+            />
+            <img
+              src="assets/akuntansi_dashboard.png"
+              alt="Thumbnail Laporan Keuangan"
+              class="thumbnail"
+              data-type="image"
+              data-src="assets/akuntansi_dashboard.png"
+            />
+            <img
+              src="assets/gambar_1.png"
+              alt="Thumbnail Halaman Jurnal"
+              class="thumbnail"
+              data-type="image"
+              data-src="assets/gambar_1.png"
+            />
+            <img
+              src="assets/gambar_2.png"
+              alt="Thumbnail Dashboard"
+              class="thumbnail"
+              data-type="image"
+              data-src="assets/gambar_2.png"
+            />
+          </div>
+        </div>
+
+        <div class="project-detail-content">
+          <div class="content-block">
+            <h4>Deskripsi Lengkap</h4>
+            <p>
+              Aplikasi web komprehensif yang dibangun dari nol menggunakan PHP
+              dan framework CodeIgniter 4. Sistem ini dirancang sebagai solusi
+              digital bagi UMKM untuk mengelola siklus akuntansi penuh secara
+              mandiri, mulai dari pencatatan jurnal, posting otomatis ke buku
+              besar, hingga menghasilkan laporan keuangan utama (Laba Rugi,
+              Neraca) yang akurat dan dapat diekspor.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h4>Fitur Utama</h4>
+            <ul class="feature-list">
+              <li>Mesin Akuntansi Full-Cycle</li>
+              <li>Manajemen Pengguna & Hak Akses (RBAC) Berlapis</li>
+              <li>Laporan Keuangan Dinamis & Portabel</li>
+              <li>Dashboard Eksekutif Interaktif</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h4>Teknologi yang Digunakan</h4>
+            <div class="tech-stack">
+              <span>Backend: PHP 8.2, CodeIgniter 4 (Arsitektur MVC)</span>
+              <span
+                >Frontend: HTML5, CSS3, JavaScript, jQuery, AdminLTE 3
+                Template</span
+              >
+              <span>Database: MySQL (dikelola via XAMPP)</span>
+              <span>Manajemen Dependensi: Composer</span>
+              <span
+                >Library & Tools: PHPMailer, DomPDF, PhpSpreadsheet, Chart.js,
+                SweetAlert2, DataTables</span
+              >
+            </div>
+          </div>
+
+          <div class="content-block project-links">
+            <a
+              href="https://github.com/zuhudq/akuntansi-web"
+              class="cta-button"
+              target="_blank"
+              >Lihat Kode di GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Zuhud Qolbu Adi. Didesain dan dikodekan dengan ❤️.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        const mainViewer = document.querySelector(".main-visual-viewer");
+        if (thumbnails.length > 0 && mainViewer) {
+          thumbnails.forEach((thumb) => {
+            thumb.addEventListener("click", function () {
+              thumbnails.forEach((innerThumb) =>
+                innerThumb.classList.remove("active")
+              );
+              this.classList.add("active");
+              const mediaType = this.dataset.type;
+              if (mediaType === "image") {
+                const imageSrc = this.dataset.src;
+                mainViewer.innerHTML = `<img src="${imageSrc}" alt="Tampilan Proyek">`;
+              } else if (mediaType === "video") {
+                const videoSrc = this.dataset.videoSrc;
+                const videoPoster = this.src;
+                mainViewer.innerHTML = `<video controls autoplay poster="${videoPoster}"><source src="${videoSrc}" type="video/mp4">Browser Anda tidak mendukung tag video.</video>`;
+              }
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

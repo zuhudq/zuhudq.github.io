@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studi Kasus: Aplikasi Cuaca Pro - Zuhud Qolbu Adi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">ZUHUD QOLBU</a>
+        <a href="index.html#proyek" class="back-link"
+          >← Kembali ke Semua Proyek</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-detail-page">
+        <div class="project-detail-header">
+          <h1>Aplikasi Cuaca Pro</h1>
+          <p class="project-summary">
+            Aplikasi web interaktif untuk menampilkan data cuaca real-time
+            dengan latar belakang dan ikon yang dinamis sesuai kondisi cuaca.
+          </p>
+        </div>
+
+        <div class="case-study-visual">
+          <div class="main-visual-viewer">
+            <video controls poster="assets/thumbnail-cuaca.jpg">
+              <source src="assets/demo-cuaca.mp4" type="video/mp4" />
+              Browser Anda tidak mendukung tag video.
+            </video>
+          </div>
+          <div class="thumbnail-gallery">
+            <img
+              src="assets/tumbnail_cuaca.png"
+              alt="Thumbnail Video Demo"
+              class="thumbnail active"
+              data-type="video"
+              data-video-src="assets/demo_cuaca.mp4"
+            />
+            <img
+              src="assets/cuaca_1.png"
+              alt="Tampilan Hujan"
+              class="thumbnail"
+              data-type="image"
+              data-src="assets/cuaca_1.png"
+            />
+            <img
+              src="assets/cuaca_2.png"
+              alt="Tampilan Malam"
+              class="thumbnail"
+              data-type="image"
+              data-src="assets/cuaca_2.png"
+            />
+            <img
+              src="assets/cuaca_3.png"
+              alt="Tampilan Malam"
+              class="thumbnail"
+              data-type="image"
+              data-src="assets/cuaca_3.png"
+            />
+          </div>
+        </div>
+
+        <div class="project-detail-content">
+          <div class="content-block">
+            <h4>Deskripsi Lengkap</h4>
+            <p>
+              Aplikasi Cuaca Pro adalah proyek frontend yang saya bangun untuk
+              mempraktikkan manipulasi DOM, pemanggilan API, dan cara
+              menciptakan pengalaman pengguna yang imersif. Aplikasi ini tidak
+              hanya menampilkan data, tetapi juga mengubah seluruh tampilannya
+              secara dinamis untuk merefleksikan cuaca saat ini, baik siang,
+              malam, hujan, atau cerah, menggunakan partikel animasi dan ikon
+              cuaca yang hidup.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h4>Fitur Utama</h4>
+            <ul class="feature-list">
+              <li>Prakiraan Cuaca Real-time & 5 Hari via WeatherAPI</li>
+              <li>
+                Latar Belakang & Partikel Animasi Dinamis (tsParticles.js)
+              </li>
+              <li>Ikon Cuaca Animasi yang Sesuai Kondisi (Skycons.js)</li>
+              <li>Penyimpanan Kota Favorit Menggunakan localStorage</li>
+              <li>Deteksi Lokasi Otomatis dengan Geolocation API</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h4>Teknologi yang Digunakan</h4>
+            <div class="tech-stack">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript (ES6+)</span>
+              <span>WeatherAPI</span>
+              <span>tsParticles.js</span>
+              <span>Skycons.js</span>
+            </div>
+          </div>
+
+          <div class="content-block project-links">
+            <a
+              href="https://github.com/zuhudq/Aplikasi-Cuaca-Pro"
+              class="cta-button"
+              target="_blank"
+              >Lihat Kode di GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Zuhud Qolbu Adi. Didesain dan dikodekan dengan ❤️.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        const mainViewer = document.querySelector(".main-visual-viewer");
+        if (thumbnails.length > 0 && mainViewer) {
+          thumbnails.forEach((thumb) => {
+            thumb.addEventListener("click", function () {
+              thumbnails.forEach((innerThumb) =>
+                innerThumb.classList.remove("active")
+              );
+              this.classList.add("active");
+              const mediaType = this.dataset.type;
+              if (mediaType === "image") {
+                mainViewer.innerHTML = `<img src="${this.dataset.src}" alt="Tampilan Proyek">`;
+              } else if (mediaType === "video") {
+                mainViewer.innerHTML = `<video controls autoplay poster="${this.src}"><source src="${this.dataset.videoSrc}" type="video/mp4">Browser Anda tidak mendukung tag video.</video>`;
+              }
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
